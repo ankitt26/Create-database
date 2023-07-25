@@ -39,3 +39,5 @@ CREATE TABLE invoice_items (
     treatment_id INT REFERENCES treatments(id)
 );
 
+ALTER TABLE medical_histories 
+ADD FOREIGN KEY (id) REFERENCES treatments(id);
