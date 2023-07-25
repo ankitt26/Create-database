@@ -29,3 +29,13 @@ CREATE TABLE treatments (
     name VARCHAR
 );
 
+
+CREATE TABLE invoice_items (
+    id SERIAL PRIMARY KEY,
+    unit_price DECIMAL,
+    quantity INT,
+    total_price DECIMAL,
+    invoice_id INT REFERENCES invoices(id),
+    treatment_id INT REFERENCES treatments(id)
+);
+
