@@ -22,3 +22,10 @@ CREATE TABLE invoices (
     payed_at TIMESTAMP,
     medical_histories_id INT REFERENCES medical_histories(id)
 );
+
+CREATE TABLE treatments (
+    id SERIAL PRIMARY KEY,
+    type VARCHAR,
+    name VARCHAR
+);
+
