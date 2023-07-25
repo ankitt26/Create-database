@@ -46,3 +46,10 @@ ADD FOREIGN KEY (id) REFERENCES treatments(id);
 CREATE INDEX  ON medical_histories (patient_id);
 CREATE INDEX  ON invoices (medical_histories_id);
 CREATE INDEX  ON medical_histories (id);
+
+
+CREATE TABLE medical_history_treatments (
+    id SERIAL PRIMARY KEY,
+    medical_history_id INT REFERENCES medical_histories(id),
+    treatment_id INT REFERENCES treatments(id)
+);
